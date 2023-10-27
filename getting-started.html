@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en" class="without-js">
+<head>
+  <title>Getting Started | Jovian-NixOS</title>
+  <base href="." />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/index.css" type="text/css" />
+
+  <script>
+    var html = document.documentElement;
+    html.className = html.className.replace("without-js", "with-js");
+  </script>
+</head>
+
+<body class="path--getting-started">
+  <header>
+    <div>
+      <h1><a href="index.html">Jovian-NixOS</a></h1>
+      <nav>
+        <ul>
+
+          <li><a href="getting-started.html" class="-getting-started">Getting Started</a></li>
+
+          <li><a href="in-depth.html" class="-in-depth">In Depth</a></li>
+
+          <li><a href="options.html" class="-options">Options</a></li>
+
+          <li><a href="packages.html" class="-packages">Packages</a></li>
+
+          <li><a href="contributing.html" class="-contributing">Contributing</a></li>
+
+          <li><a href="search.html" class="-search">Search</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="generic-layout">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1>Getting Started</h1>
+<p>Using Jovian NixOS requires <em>some</em> NixOS knowledge, ideally.
+It's not a strict requirement, but will make your life easier, as this may make some NixOS peculiarities harder to deal with.</p>
+<h2>Installing NixOS</h2>
+<p>For now, this may be the "hardest" step, as it requires thinking ahead.
+Note that you're free to install NixOS in any way you want.</p>
+<p>Though here are the requirements:</p>
+<ul>
+<li>Only the <code>unstable</code> channel is supported.</li>
+</ul>
+<p>Here are some tips:</p>
+<ul>
+<li>You will most likely need some way to type commands, e.g. a keyboard.</li>
+<li>You can use an SD card to boot the installation media, freeing-up the only USB port.</li>
+<li>Using a docking station sure is helpful, but not needed.</li>
+<li>FDE (full-disk encryption) may or may not be an issue, considering there is no physical keyboard.</li>
+</ul>
+<p>Up to this moment, nothing here is specific to Jovian NixOS or the Steam Deck.</p>
+<h2>Configuring Jovian NixOS</h2>
+<p>This is where the fun begins!</p>
+<h3>Configuring for your hardware</h3>
+<p>This only applies if you have a "made for gaming" device like the Steam Deck, or other portable gaming devices.</p>
+<p>Other computers are just boring computers, and mostly need nothing special here.
+Note that since the Steam Deck experience is developed on AMD hardware, using <a href="https://github.com/Jovian-Experiments/Jovian-NixOS/labels/8.%20hardware%3A%20other">other hardware</a> may have issues, especially [NVIDIA hardware](<a href="https://github.com/Jovian-Experiments/Jovian-NixOS/labels/8">https://github.com/Jovian-Experiments/Jovian-NixOS/labels/8</a>. hardware%3A NVIDIA).</p>
+<p><strong>Known hardware</strong></p>
+<ul>
+<li><a href="devices/valve-steam-deck/index.html">Valve Steam Deck</a></li>
+</ul>
+<p>Feel free to contribute more for-gaming hardware-specific quirks!</p>
+<h3>Configuring the software</h3>
+<blockquote class="admonition-box -info">
+<header>Info</header>
+<p>This section is a stub.</p>
+</blockquote>
+<p>When configuring the system, import <code>./modules</code> from this repo in your configuration.</p>
+<p>One way to do so is by using <code>fetchTarball</code> in the <code>imports</code> of your configuration.</p>
+<pre><code class="language-nix highlight"><span class="p">{</span> <span class="nv">config</span><span class="p">,</span> <span class="nv">lib</span><span class="p">,</span> <span class="nv">pkgs</span><span class="p">,</span> <span class="o">...</span> <span class="p">}:</span>
+
+<span class="p">{</span>
+  <span class="nv">imports</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span>
+      <span class="c"># Put the most recent revision here:</span>
+      <span class="kd">let</span> <span class="nv">revision</span> <span class="o">=</span> <span class="s2">"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"</span><span class="p">;</span> <span class="kn">in</span>
+      <span class="kr">builtins</span><span class="o">.</span><span class="kr">fetchTarball</span> <span class="p">{</span>
+        <span class="nv">url</span> <span class="o">=</span> <span class="s2">"https://github.com/Jovian-Experiments/Jovian-NixOS/archive/</span><span class="si">${</span><span class="nv">revision</span><span class="si">}</span><span class="s2">.tar.gz"</span><span class="p">;</span>
+        <span class="c"># Update the hash as needed:</span>
+        <span class="nv">sha256</span> <span class="o">=</span> <span class="s2">"sha256:0000000000000000000000000000000000000000000000000000"</span><span class="p">;</span>
+      <span class="p">}</span> <span class="o">+</span> <span class="s2">"/modules"</span>
+    <span class="p">)</span>
+
+  <span class="c">/* ... */</span>
+  <span class="p">];</span>
+
+  <span class="c">/* ... */</span>
+<span class="p">}</span>
+</code></pre>
+<p>Another way is to use <em>Flakes</em>, or any other method to fetch inputs.</p>
+<p>When hacking on Jovian NixOS things, adding the path to a Git checkout of this repo to <code>imports</code> works well too.</p>
+<p>See the <a href="configuration.html">Configuration</a> page for more information about configuration.</p>
+</body></html>
+
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <nav>
+        <ul>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          
+            
+          <li><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/edit/development/docs/getting-started.md">Edit this page</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

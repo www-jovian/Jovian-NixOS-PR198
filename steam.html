@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en" class="without-js">
+<head>
+  <title>Steam | Jovian-NixOS</title>
+  <base href="." />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/index.css" type="text/css" />
+
+  <script>
+    var html = document.documentElement;
+    html.className = html.className.replace("without-js", "with-js");
+  </script>
+</head>
+
+<body class="path--steam-html">
+  <header>
+    <div>
+      <h1><a href="index.html">Jovian-NixOS</a></h1>
+      <nav>
+        <ul>
+
+          <li><a href="getting-started.html" class="-getting-started">Getting Started</a></li>
+
+          <li><a href="in-depth.html" class="-in-depth">In Depth</a></li>
+
+          <li><a href="options.html" class="-options">Options</a></li>
+
+          <li><a href="packages.html" class="-packages">Packages</a></li>
+
+          <li><a href="contributing.html" class="-contributing">Contributing</a></li>
+
+          <li><a href="search.html" class="-search">Search</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="generic-layout">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1>Steam</h1>
+<p>You can enable the Steam Deck version of the Steam client with:</p>
+<pre><code class="language-nix highlight"><span class="p">{</span>
+  <span class="nv">jovian</span><span class="o">.</span><span class="nv">steam</span><span class="o">.</span><span class="nv">enable</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+<p>To manually start <strong>Gaming Mode</strong> (also known as the <strong>Steam Deck UI</strong>), there are two options:</p>
+<ul>
+<li>Select "Gaming Mode" in the Display Manager or run <code>start-gamescope-session</code> in a VT.</li>
+<li>Launch <code>gamescope-session</code> within an existing desktop session. This will run <a href="https://github.com/Plagman/gamescope">gamescope</a> in nested mode which results in higher latency.</li>
+</ul>
+<h2>Start On Boot</h2>
+<p>To automatically launch Gaming Mode on boot and enable desktop switching from the power menu:</p>
+<pre><code class="language-nix highlight"><span class="p">{</span>
+  <span class="nv">services</span><span class="o">.</span><span class="nv">xserver</span><span class="o">.</span><span class="nv">desktopManager</span><span class="o">.</span><span class="nv">plasma5</span><span class="o">.</span><span class="nv">enable</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+  <span class="nv">jovian</span><span class="o">.</span><span class="nv">steam</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nv">enable</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nv">autoStart</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+    <span class="nv">user</span> <span class="o">=</span> <span class="s2">"yourname"</span><span class="p">;</span>
+    <span class="nv">desktopSession</span> <span class="o">=</span> <span class="s2">"plasma"</span><span class="p">;</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</code></pre>
+<h2>Troubleshooting</h2>
+<p>Logs from Gaming Mode can be obtained with:</p>
+<pre><code class="language-bash highlight">journalctl <span class="nt">--user</span> <span class="nt">-u</span> gamescope-session
+</code></pre>
+<h2>Options</h2>
+<div class="for-github -unneeded">
+<blockquote class="admonition-box -note">
+<header>Note</header>
+<p>The options listing is available on the website.</p>
+</blockquote>
+</div>
+<section class="option-details" id="jovian.steam.autoStart">
+<h3><a href="options.html#jovian.steam.autoStart">jovian.steam.autoStart</a></h3>
+<div class="data">
+<div class="option-data -name">
+<h4>Name:</h4>
+<code>jovian.steam.autoStart</code>
+</div>
+<div class="option-data -default">
+<h4>Default:</h4>
+<code>false</code>
+</div>
+<div class="option-data -type">
+<h4>Type:</h4>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h4>Description:</h4>
+<div>
+<p>Whether to automatically launch the Steam Deck UI on boot.</p>
+<p>Traditional Display Managers cannot be enabled in conjunction with this option.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h4>Declared by:</h4>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steam/autostart.nix">modules/steam/autostart.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.steam.desktopSession">
+<h3><a href="options.html#jovian.steam.desktopSession">jovian.steam.desktopSession</a></h3>
+<div class="data">
+<div class="option-data -name">
+<h4>Name:</h4>
+<code>jovian.steam.desktopSession</code>
+</div>
+<div class="option-data -default">
+<h4>Default:</h4>
+<code>null</code>
+</div>
+<div class="option-data -type">
+<h4>Type:</h4>
+<div>
+null or string
+</div>
+</div>
+<div class="option-data -description">
+<h4>Description:</h4>
+<div>
+<p>The session to launch for Desktop Mode.</p>
+<p>By default, attempting to switch to the desktop will launch
+Gaming Mode again.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h4>Declared by:</h4>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steam/autostart.nix">modules/steam/autostart.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.steam.enable">
+<h3><a href="options.html#jovian.steam.enable">jovian.steam.enable</a></h3>
+<div class="data">
+<div class="option-data -name">
+<h4>Name:</h4>
+<code>jovian.steam.enable</code>
+</div>
+<div class="option-data -default">
+<h4>Default:</h4>
+<code>false</code>
+</div>
+<div class="option-data -type">
+<h4>Type:</h4>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h4>Description:</h4>
+<div>
+<p>Whether to enable the Steam Deck UI.</p>
+<p>When enabled, you can either use the <code>autoStart</code> option (preferred),
+launch the Steam Deck UI from your Display Manager or
+by running <code>start-gamescope-session</code>.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h4>Declared by:</h4>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steam/default.nix">modules/steam/default.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.steam.user">
+<h3><a href="options.html#jovian.steam.user">jovian.steam.user</a></h3>
+<div class="data">
+<div class="option-data -name">
+<h4>Name:</h4>
+<code>jovian.steam.user</code>
+</div>
+<div class="option-data -default">
+<h4>Default:</h4>
+<em>(unset)</em>
+</div>
+<div class="option-data -type">
+<h4>Type:</h4>
+<div>
+string
+</div>
+</div>
+<div class="option-data -description">
+<h4>Description:</h4>
+<div>
+<p>The user to run Steam with.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h4>Declared by:</h4>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steam/autostart.nix">modules/steam/autostart.nix</a></div>
+</div>
+</div>
+</section>
+</body></html>
+
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <nav>
+        <ul>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          
+            
+          <li><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/edit/development/docs/steam.md">Edit this page</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

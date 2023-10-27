@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+
+<html lang="en" class="without-js">
+<head>
+  <title>Options | Jovian-NixOS</title>
+  <base href="." />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/index.css" type="text/css" />
+
+  <script>
+    var html = document.documentElement;
+    html.className = html.className.replace("without-js", "with-js");
+  </script>
+</head>
+
+<body class="path--options-html">
+  <header>
+    <div>
+      <h1><a href="index.html">Jovian-NixOS</a></h1>
+      <nav>
+        <ul>
+
+          <li><a href="getting-started.html" class="-getting-started">Getting Started</a></li>
+
+          <li><a href="in-depth.html" class="-in-depth">In Depth</a></li>
+
+          <li><a href="options.html" class="-options">Options</a></li>
+
+          <li><a href="packages.html" class="-packages">Packages</a></li>
+
+          <li><a href="contributing.html" class="-contributing">Contributing</a></li>
+
+          <li><a href="search.html" class="-search">Search</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="generic-layout">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1>Options</h1>
+<p>Jovian-NixOS adds a set of extra options that can be used in your NixOS configurations under the <code>jovian</code> prefix.</p>
+<div class="for-github -unneeded">
+<blockquote class="admonition-box -note">
+<header>Note</header>
+<p>The options listing is available on the website.</p>
+</blockquote>
+</div>
+<section class="option-details" id="jovian.decky-loader.enable">
+<h2><a href="options.html#jovian.decky-loader.enable">jovian.decky-loader.enable</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.decky-loader.enable</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>false</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to enable the Steam Deck Plugin Loader.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/decky-loader.nix">modules/decky-loader.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.decky-loader.extraPackages">
+<h2><a href="options.html#jovian.decky-loader.extraPackages">jovian.decky-loader.extraPackages</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.decky-loader.extraPackages</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>[ ]</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+list of package
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Extra packages to add to the service PATH.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/decky-loader.nix">modules/decky-loader.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.decky-loader.extraPythonPackages">
+<h2><a href="options.html#jovian.decky-loader.extraPythonPackages">jovian.decky-loader.extraPythonPackages</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.decky-loader.extraPythonPackages</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>pythonPackages: with pythonPackages; []</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+function that evaluates to a(n) list of package
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Extra Python packages to add to the PYTHONPATH of the loader.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/decky-loader.nix">modules/decky-loader.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.decky-loader.package">
+<h2><a href="options.html#jovian.decky-loader.package">jovian.decky-loader.package</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.decky-loader.package</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>pkgs.decky-loader</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+package
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>The loader package to use.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/decky-loader.nix">modules/decky-loader.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.decky-loader.stateDir">
+<h2><a href="options.html#jovian.decky-loader.stateDir">jovian.decky-loader.stateDir</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.decky-loader.stateDir</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>"/var/lib/decky-loader"</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+path
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Directory to store plugins and data.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/decky-loader.nix">modules/decky-loader.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.decky-loader.user">
+<h2><a href="options.html#jovian.decky-loader.user">jovian.decky-loader.user</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.decky-loader.user</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>"decky"</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+string
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>The user Decky Loader should run plugins as.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/decky-loader.nix">modules/decky-loader.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.autoUpdate">
+<h2><a href="options.html#jovian.devices.steamdeck.autoUpdate">jovian.devices.steamdeck.autoUpdate</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.autoUpdate</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>false</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to automatically update the BIOS and controller firmware.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/firmware.nix">modules/steamdeck/firmware.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enable">
+<h2><a href="options.html#jovian.devices.steamdeck.enable">jovian.devices.steamdeck.enable</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>false</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to enable Steam Deck-specific configurations.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/default.nix">modules/steamdeck/default.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableControllerUdevRules">
+<h2><a href="options.html#jovian.devices.steamdeck.enableControllerUdevRules">jovian.devices.steamdeck.enableControllerUdevRules</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableControllerUdevRules</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Enables udev rules to make the controller controllable by users.</p>
+<p>Without this, neither steam, nor any other userspace client can
+switch the controller from out of its default "lizard" mode.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/controller.nix">modules/steamdeck/controller.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableDefaultCmdlineConfig">
+<h2><a href="options.html#jovian.devices.steamdeck.enableDefaultCmdlineConfig">jovian.devices.steamdeck.enableDefaultCmdlineConfig</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableDefaultCmdlineConfig</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to enable stock kernel command line flags.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/hw-support.nix">modules/steamdeck/hw-support.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableDefaultStage1Modules">
+<h2><a href="options.html#jovian.devices.steamdeck.enableDefaultStage1Modules">jovian.devices.steamdeck.enableDefaultStage1Modules</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableDefaultStage1Modules</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to enable essential kernel modules in initrd.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/hw-support.nix">modules/steamdeck/hw-support.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableDefaultSysctlConfig">
+<h2><a href="options.html#jovian.devices.steamdeck.enableDefaultSysctlConfig">jovian.devices.steamdeck.enableDefaultSysctlConfig</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableDefaultSysctlConfig</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to enable stock sysctl configs.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/hw-support.nix">modules/steamdeck/hw-support.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableEarlyModesetting">
+<h2><a href="options.html#jovian.devices.steamdeck.enableEarlyModesetting">jovian.devices.steamdeck.enableEarlyModesetting</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableEarlyModesetting</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to enable early kernel modesetting.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/graphical.nix">modules/steamdeck/graphical.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableFwupdBiosUpdates">
+<h2><a href="options.html#jovian.devices.steamdeck.enableFwupdBiosUpdates">jovian.devices.steamdeck.enableFwupdBiosUpdates</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableFwupdBiosUpdates</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to use fwupd to update the BIOS.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/firmware.nix">modules/steamdeck/firmware.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableGyroDsuService">
+<h2><a href="options.html#jovian.devices.steamdeck.enableGyroDsuService">jovian.devices.steamdeck.enableGyroDsuService</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableGyroDsuService</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>false</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to enable the Cemuhook DSU service for the gyroscope.</p>
+<p>If enabled, motion data from the gyroscope can be used in Cemu
+with Cemuhook.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/sdgyrodsu.nix">modules/steamdeck/sdgyrodsu.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableKernelPatches">
+<h2><a href="options.html#jovian.devices.steamdeck.enableKernelPatches">jovian.devices.steamdeck.enableKernelPatches</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableKernelPatches</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to apply kernel patches if available.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/kernel.nix">modules/steamdeck/kernel.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableMesaPatches">
+<h2><a href="options.html#jovian.devices.steamdeck.enableMesaPatches">jovian.devices.steamdeck.enableMesaPatches</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableMesaPatches</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to apply the Mesa patches if available.</p>
+<p>Currently, they allow the swapchain interval to be changed by
+the framerate limiter in gamescope.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/mesa.nix">modules/steamdeck/mesa.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableOsFanControl">
+<h2><a href="options.html#jovian.devices.steamdeck.enableOsFanControl">jovian.devices.steamdeck.enableOsFanControl</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableOsFanControl</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to enable the OS-controlled fan curve.</p>
+<p>This is enabled by default since SteamOS 3.2.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/fan-control.nix">modules/steamdeck/fan-control.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enablePerfControlUdevRules">
+<h2><a href="options.html#jovian.devices.steamdeck.enablePerfControlUdevRules">jovian.devices.steamdeck.enablePerfControlUdevRules</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enablePerfControlUdevRules</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to make performance-related device attributes controllable by users.</p>
+<p>The Steam Deck Client directly modifies several device attributes to
+control the display brightness and to enable performance tuning (TDP
+limit, GPU clock control).</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/perf-control.nix">modules/steamdeck/perf-control.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableProductSerialAccess">
+<h2><a href="options.html#jovian.devices.steamdeck.enableProductSerialAccess">jovian.devices.steamdeck.enableProductSerialAccess</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableProductSerialAccess</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<blockquote>
+<p>Loosen the product_serial node to <code>440 / root:wheel</code>, rather than <code>400 / root:root</code>
+to allow the physical users to read S/N without auth.
+— holo-dmi-rules 1.0</p>
+</blockquote>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/hw-support.nix">modules/steamdeck/hw-support.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableSoundSupport">
+<h2><a href="options.html#jovian.devices.steamdeck.enableSoundSupport">jovian.devices.steamdeck.enableSoundSupport</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableSoundSupport</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to enable sound support.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/sound.nix">modules/steamdeck/sound.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableVendorRadv">
+<h2><a href="options.html#jovian.devices.steamdeck.enableVendorRadv">jovian.devices.steamdeck.enableVendorRadv</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableVendorRadv</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to enable the vendor branch of Mesa RADV.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/mesa.nix">modules/steamdeck/mesa.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.devices.steamdeck.enableXorgRotation">
+<h2><a href="options.html#jovian.devices.steamdeck.enableXorgRotation">jovian.devices.steamdeck.enableXorgRotation</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.devices.steamdeck.enableXorgRotation</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>config.jovian.devices.steamdeck.enable</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to rotate the display panel in X11.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steamdeck/graphical.nix">modules/steamdeck/graphical.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.steam.autoStart">
+<h2><a href="options.html#jovian.steam.autoStart">jovian.steam.autoStart</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.steam.autoStart</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>false</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to automatically launch the Steam Deck UI on boot.</p>
+<p>Traditional Display Managers cannot be enabled in conjunction with this option.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steam/autostart.nix">modules/steam/autostart.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.steam.desktopSession">
+<h2><a href="options.html#jovian.steam.desktopSession">jovian.steam.desktopSession</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.steam.desktopSession</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>null</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+null or string
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>The session to launch for Desktop Mode.</p>
+<p>By default, attempting to switch to the desktop will launch
+Gaming Mode again.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steam/autostart.nix">modules/steam/autostart.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.steam.enable">
+<h2><a href="options.html#jovian.steam.enable">jovian.steam.enable</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.steam.enable</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>false</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to enable the Steam Deck UI.</p>
+<p>When enabled, you can either use the <code>autoStart</code> option (preferred),
+launch the Steam Deck UI from your Display Manager or
+by running <code>start-gamescope-session</code>.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steam/default.nix">modules/steam/default.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.steam.user">
+<h2><a href="options.html#jovian.steam.user">jovian.steam.user</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.steam.user</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<em>(unset)</em>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+string
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>The user to run Steam with.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/steam/autostart.nix">modules/steam/autostart.nix</a></div>
+</div>
+</div>
+</section>
+<section class="option-details" id="jovian.workarounds.ignoreMissingKernelModules">
+<h2><a href="options.html#jovian.workarounds.ignoreMissingKernelModules">jovian.workarounds.ignoreMissingKernelModules</a></h2>
+<div class="data">
+<div class="option-data -name">
+<h3>Name:</h3>
+<code>jovian.workarounds.ignoreMissingKernelModules</code>
+</div>
+<div class="option-data -default">
+<h3>Default:</h3>
+<code>true</code>
+</div>
+<div class="option-data -type">
+<h3>Type:</h3>
+<div>
+boolean
+</div>
+</div>
+<div class="option-data -description">
+<h3>Description:</h3>
+<div>
+<p>Whether to ignore missing kernel modules.</p>
+</div>
+</div>
+<div class="option-data -declaration">
+<h3>Declared by:</h3>
+<div><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/blob/development/modules/workarounds.nix">modules/workarounds.nix</a></div>
+</div>
+</div>
+</section>
+</body></html>
+
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <nav>
+        <ul>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          
+            
+          <li><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/edit/development/docs/options.md">Edit this page</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

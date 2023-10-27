@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en" class="without-js">
+<head>
+  <title>Steam Deck | Jovian-NixOS</title>
+  <base href="../.." />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/index.css" type="text/css" />
+
+  <script>
+    var html = document.documentElement;
+    html.className = html.className.replace("without-js", "with-js");
+  </script>
+</head>
+
+<body class="path--devices-valve-steam-deck/index">
+  <header>
+    <div>
+      <h1><a href="index.html">Jovian-NixOS</a></h1>
+      <nav>
+        <ul>
+
+          <li><a href="getting-started.html" class="-getting-started">Getting Started</a></li>
+
+          <li><a href="in-depth.html" class="-in-depth">In Depth</a></li>
+
+          <li><a href="options.html" class="-options">Options</a></li>
+
+          <li><a href="packages.html" class="-packages">Packages</a></li>
+
+          <li><a href="contributing.html" class="-contributing">Contributing</a></li>
+
+          <li><a href="search.html" class="-search">Search</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="generic-layout">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1>Steam Deck</h1>
+<h2>Configuration</h2>
+<p>When configuring the system, import <code>./modules</code> from this repo in your configuration and enable the Steam Deck-specific hardware configurations with <code>jovian.devices.steamdeck.enable = true;</code>.</p>
+<h2>Firmware Updates</h2>
+<p>Firmware update, at this time, is not handled automatically.</p>
+<h3><code>steamdeck-firmware</code></h3>
+<p>Updates to the BIOS and the controller are available in the <code>steamdeck-firmware</code> package:</p>
+<ul>
+<li>BIOS: Run <code>sudo jupiter-biosupdate</code>
+</li>
+<li>Controller: Run <code>sudo jupiter-controller-update</code>
+</li>
+</ul>
+<h3><code>jupiter-dock-updater-bin</code></h3>
+<p>Updates to the Docking Station firmware are available in the <code>jupiter-dock-updater-bin</code> package.
+Connect to the dock via USB-C and run <code>jupiter-dock-updater</code> to update.</p>
+<h2>Helpful Tips</h2>
+<p>To enter the boot menu, power off the Steam Deck then hold down <code>Volume-</code> and tap the <code>Power</code> button.</p>
+</body></html>
+
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <nav>
+        <ul>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          
+            
+          <li><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/edit/development/docs/devices/valve-steam-deck/index.md">Edit this page</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

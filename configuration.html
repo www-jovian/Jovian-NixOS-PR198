@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en" class="without-js">
+<head>
+  <title>Configuration | Jovian-NixOS</title>
+  <base href="." />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/index.css" type="text/css" />
+
+  <script>
+    var html = document.documentElement;
+    html.className = html.className.replace("without-js", "with-js");
+  </script>
+</head>
+
+<body class="path--configuration-html">
+  <header>
+    <div>
+      <h1><a href="index.html">Jovian-NixOS</a></h1>
+      <nav>
+        <ul>
+
+          <li><a href="getting-started.html" class="-getting-started">Getting Started</a></li>
+
+          <li><a href="in-depth.html" class="-in-depth">In Depth</a></li>
+
+          <li><a href="options.html" class="-options">Options</a></li>
+
+          <li><a href="packages.html" class="-packages">Packages</a></li>
+
+          <li><a href="contributing.html" class="-contributing">Contributing</a></li>
+
+          <li><a href="search.html" class="-search">Search</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="generic-layout">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1>Configuration</h1>
+<blockquote class="admonition-box -info">
+<header>Info</header>
+<p>This page is a stub.</p>
+</blockquote>
+<p>All available module options along with their descriptions can be found under <code>modules</code>.</p>
+<p>To use the Steam Deck UI, set <code>jovian.steam.enable = true;</code> in your configuration.
+This will only enable the Steam Deck UI tooling. To enable "desktop" steam, enable the usual NixOS options.
+Then you can start the UI using one of the following methods:</p>
+<ul>
+<li>(<strong>preferred</strong>) Use <code>jovian.steam.autoStart = true;</code> to auto-start at login, and enabling use of <em>Switch to Desktop</em> option.</li>
+<li>Select "Gaming Mode" in the Display Manager or run <code>start-gamescope-session</code> in a VT.</li>
+<li>Launch <code>gamescope-session</code> within an existing desktop session. This will run <a href="https://github.com/Plagman/gamescope">gamescope</a> in nested mode which results in higher latency.</li>
+</ul>
+<p>If you want <em>Switch to Desktop</em> to switch to another session with <code>autoStart</code>, you will need to configure <code>jovian.steam.desktopSession</code>.
+Configure it with the name of the X11 or Wayland session of your choosing.
+The <em>Switch to Desktop</em> option will not work with the other two methods of running the Steam Deck UI, instead it will close Steam.</p>
+</body></html>
+
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      <nav>
+        <ul>
+          <li><a href="sitemap.html">Sitemap</a></li>
+          
+            
+          <li><a href="https://github.com/Jovian-Experiments/Jovian-NixOS/edit/development/docs/configuration.md">Edit this page</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
